@@ -176,7 +176,7 @@ function serverDocSnapshot(snapshot) {
 }
 
 function preemptiveServerSnapshot() {
-    console.log("preemptiveServerSnapshot")
+    //console.log("preemptiveServerSnapshot")
 
     if (sI) { clearInterval(sI); }
 
@@ -216,7 +216,7 @@ function onTimerExpire(){
     unlockedDiv.style.display = "none";
     unlockBtn.style.display = "none";
     weekMessageDiv.children[0].innerText = "IT'S OVER!"
-    weekMessageDiv.children[1].innerText = "You've done all that you can for this week. \n We hope you had fun."
+    weekMessageDiv.children[1].innerText = "You've done all that you can for this week. \n We hope that you had fun."
     
     weekMessageDiv.style.removeProperty("display");
 }
