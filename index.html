@@ -1,0 +1,137 @@
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Event - Online</title>
+  <link type="text/css" href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <img id="logo" src="images/FinalLogo.svg" alt="The Logo">
+  </div>
+  <div id="logged-in" class="container" style="display:none;">
+    <span id="li-message">You are logged in as .</span>
+    <button id="logout">Log Out</button>
+
+
+  </div>
+
+  <div class="container" id="login-div" style="display:none;">
+    <div class="form">
+      <form id="login-form">
+        <input type="text" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button>LOGIN</button>
+        <br>
+        <span id="loginError" class="error-text" style="display:none;">Error with username or password.</span>
+      </form>
+    </div>
+
+
+  </div>
+  </div>
+
+  <div class="container" style="display: none">
+  <h3 id="topMessage" class="messageBox"> </h3>
+  </div>
+
+  <div class="container">
+    <div class="box" id="currentWeek" style="display: none">
+
+      <h1 id="weekTitle">Week One</h1>
+      <div id="week-message-div" style="display:none;">
+        <h4>To download this week's tasks, first click 'Unlock'.<br>You will then have 1 hour to submit your answers.
+        </h4>
+        <h4>Good luck!</h4>
+      </div>
+      <h1 id="timer" style="display:none;"></h1>
+      <button id="unlockBtn">Unlock</button>
+      <br>
+
+      <div id="unlockedDiv" style="display:none;">
+        <a id="downloadBtn">Download</a>
+        <br>
+
+
+        <div id="UploadPhoto">
+          <input type="file" name="file" id="thePhoto" class="inputfile" />
+          <label class="upload" for="thePhoto">Select Photo</label>
+          <span></span>
+        </div>
+
+        <div id="UploadAnswers">
+          <input type="file" name="file" id="answers" class="inputfile" />
+          <label class="upload" for="answers">Select Answers</label>
+          <span></span>
+        </div>
+
+
+
+
+        <button id="submitBtn">Submit File(s)</button>
+        <br>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div id="previousScores" style="display: none; margin-top:200px;">
+        <div class="container"> 
+        <h3 class="messageBox" style="width:auto">Previous Scores</h3>
+        </div>
+  
+  </div>
+
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-functions.js"></script>
+
+
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDsnGO1AZSFup7o58VEyF8JwA3NqsMMe7M",
+      authDomain: "theeventonline-4809b.firebaseapp.com",
+      databaseURL: "https://theeventonline-4809b.firebaseio.com",
+      projectId: "theeventonline-4809b",
+      storageBucket: "theeventonline-4809b.appspot.com",
+      messagingSenderId: "701851897943",
+      appId: "1:701851897943:web:2f5ed2acb01e565e27d312"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+
+  </script>
+
+<script>console.log("v0.1")</script>
+  <script src="js/auth.js"></script>
+
+
+  <script src="js/weeks.js"></script>
+
+
+
+</body>

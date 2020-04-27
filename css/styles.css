@@ -1,0 +1,124 @@
+body{
+    background-color: white;
+    text-align: center;
+    color: black;
+    font-family: sans-serif;
+    margin: 90px 0px 90px 0px;
+  }
+ 
+#logo{
+  max-width:75%
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.messageBox {
+  max-width:80%;
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  background-color:white;
+  border-color: black;
+  border-width: 4px 0;
+  border-style: solid;
+}
+
+.box {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  width: 400px;
+  max-width:80%;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: 0 10px;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+button, .upload, #downloadBtn {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: black;
+  border: 0;
+  margin: 8px;
+  padding: 8px 0px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+  width: 140px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+  font-weight: bold;
+}
+
+button:disabled{
+  background-color: rgb(133, 105, 105);
+  cursor: not-allowed;
+}
+
+.disabled{
+  background-color: rgb(133, 105, 105);
+  cursor: not-allowed;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#timer{
+  font-size: 64px;
+}
+
+.success-text{
+  color: limegreen;
+  font-weight: 600;
+}
+
+.error-text{
+  color: red;
+  font-weight: 600;
+}
+
+.fileSpanOn{
+  display: inline-block;
+  width: 145px;
+  text-align: left;
+}
