@@ -264,7 +264,7 @@ function onScoresSnapshot(snap){
 
             let s = `<div class="box">
             <h1>{title}</h1>
-            <h2>Score: {score}/100</h2>
+            <h2>Score: {score}/60</h2>
             <p>{message}</p>
             </div>`
             s = s.replace("{title}", doc.id)
