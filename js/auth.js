@@ -7,6 +7,7 @@ var message;
 var weekString;
 var weekTitle;
 var downloadCount;
+
 auth.onAuthStateChanged(async function (user) {
     if (user) {
         console.log("User logged in.")//:", user)

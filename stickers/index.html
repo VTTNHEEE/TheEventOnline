@@ -1,0 +1,99 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Event - Online</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../images/favicon/manifest.json">
+
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link type="text/css" href="../css/styles.css" rel="stylesheet">
+
+</head>
+
+<div class="container">
+    <img id="logo" src="../images/FinalLogo.svg" alt="The Logo">
+  </div>
+  <div id="logged-in" class="container" style="display:none;">
+    <span id="li-message">You are logged in as .</span>
+    <button id="logout" style="display:none;">Log Out</button>
+
+
+  </div>
+
+  <div class="container" id="login-div" style="display:none;">
+    <div class="form">
+      <form id="login-form">
+        <input type="text" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button>LOGIN</button>
+        <br>
+        <span id="loginError" class="error-text" style="display:none;">Error with username or password.</span>
+      </form>
+    </div>
+</div>
+
+<div class="container" style="display: none;" id="topContainter">
+<h1 class="messageBox">There are currently <span id="numberOfSecrets">#</span> available stickers.</h1>
+</div>
+
+<div id="secretsDiv">
+
+</div>
+
+      
+
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-functions.js"></script>
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDsnGO1AZSFup7o58VEyF8JwA3NqsMMe7M",
+      authDomain: "theeventonline-4809b.firebaseapp.com",
+      databaseURL: "https://theeventonline-4809b.firebaseio.com",
+      projectId: "theeventonline-4809b",
+      storageBucket: "theeventonline-4809b.appspot.com",
+      messagingSenderId: "701851897943",
+      appId: "1:701851897943:web:2f5ed2acb01e565e27d312"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+
+  </script>
+
+<script>console.log("v0.16")</script>
+  <script src="js/secrets.js"></script>
+
+
+
+</body>
