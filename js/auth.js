@@ -31,6 +31,11 @@ auth.onAuthStateChanged(async function (user) {
         document.querySelector("#topMessage").parentElement.style.removeProperty("display")
         }
 
+        if(weekString == "week3"){
+            document.querySelector("#UploadPhoto label").innerText = "Select Photo 1"
+            document.querySelector("#UploadPhoto").style.removeProperty("display")
+        }
+
         // Setup userDoc = /users/UID/user/weekString
         userDoc = db.collection("users").doc(auth.getUid()).collection("user").doc(weekString)
         let userDocPromise = await userDoc.get()

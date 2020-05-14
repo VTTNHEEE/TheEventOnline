@@ -4,6 +4,9 @@ const answerSpan = document.querySelector('#UploadAnswers span');
 const photoUpload = document.querySelector('#UploadPhoto input');
 const photoSpan = document.querySelector('#UploadPhoto span');
 
+const photoUpload2 = document.querySelector('#UploadPhoto2 input');
+const photoSpan2 = document.querySelector('#UploadPhoto2 span');
+
 function initUpload(uploadEle, spanEle) {
 
     uploadEle.addEventListener('change', function () {
@@ -19,6 +22,7 @@ function initUpload(uploadEle, spanEle) {
 
 initUpload(answerUpload, answerSpan)
 initUpload(photoUpload, photoSpan)
+initUpload(photoUpload2, photoSpan2)
 
 
 function shortenFilename(fn) {
@@ -88,6 +92,8 @@ function onSubmit() {
 
     _submit(answerUpload, answerSpan)
     _submit(photoUpload, photoSpan)
+    _submit(photoUpload2, photoSpan2)
+
 
 }
 
