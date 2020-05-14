@@ -34,6 +34,7 @@ auth.onAuthStateChanged(async function (user) {
         if(weekString == "week3"){
             document.querySelector("#UploadPhoto label").innerText = "Select Photo 1"
             document.querySelector("#UploadPhoto2").style.removeProperty("display")
+            
         }
 
         // Setup userDoc = /users/UID/user/weekString
