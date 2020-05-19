@@ -82,7 +82,11 @@ function onSubmit() {
         }, function (error) {
             console.log('Error on upload: ', error);
             spanEle.classList.add("error-text")
-        }, function () {
+            document.querySelector("#errorLog").innerText += "Error in submission. \n Please try again and then inform an admin."
+            document.querySelector("#errorLog").innerText += "\n Error:" + error.code
+            document.querySelector("#errorLog").innerText += "\n sR:" + error.serverResponse
+
+            }, function () {
             console.log('File upload success');
             spanEle.classList.add("success-text")
         });
