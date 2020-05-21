@@ -46,6 +46,9 @@ const pwdForm = document.querySelector('#pwd-form')
 pwdForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const code = pwdForm['pwd-input'].value.toUpperCase();
+    console.log("Entering...", code)
+    db.collection("log").doc("inputs").collection(auth.currentUser["displayName"]).doc(Date.now().toString()).set({"time": firebase.firestore.Timestamp.now(), "input": code })
+
     storage.refFromURL('gs://theeventonline-4809b.appspot.com/password').child(code).child('image.jpg').getDownloadURL().then(
 
     url => {document.querySelector("#image_response").src = url ;
