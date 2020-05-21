@@ -53,7 +53,7 @@ pwdForm.addEventListener('submit', (e) => {
 
     url => {document.querySelector("#image_response").src = url ;
     document.querySelector("#pwdError").style["display"] = "none";}
-    ).catch(e=>  document.querySelector("#pwdError").style.removeProperty("display"))
+    ).catch(e=>  {document.querySelector("#pwdError").innerText = "Incorrect Password: " + pwdForm['pwd-input'].value.toString() ; document.querySelector("#pwdError").style.removeProperty("display")})
     
 
 })
