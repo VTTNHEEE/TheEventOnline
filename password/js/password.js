@@ -5,6 +5,7 @@ const pwd_div = document.querySelector('#pwd-div');
 
 
 var numberOfSecrets;
+var weekString;
 auth.onAuthStateChanged(async function (user) {
     if (user) {
         console.log("User logged in.")//:", user)
@@ -15,8 +16,9 @@ auth.onAuthStateChanged(async function (user) {
         loginDiv.style.display = "none"
         document.querySelector('#li-message').innerText = "You are logged in as " + user["displayName"] + "."
             
-
-
+        //Get weekString and message
+        let metaPromise = await db.collection("meta").doc("info").get()
+        weekString = metaPromise.data().weekString
 
     } else {
         console.log("User logged out.")//:", user)
@@ -46,15 +48,16 @@ const pwdForm = document.querySelector('#pwd-form')
 pwdForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const code = pwdForm['pwd-input'].value.toUpperCase();
+    const rawCode = pwdForm['pwd-input'].value.toString();
     console.log("Entering...", code)
-    db.collection("log").doc("inputs").collection(auth.currentUser["displayName"]).doc(Date.now().toString()).set({"time": firebase.firestore.Timestamp.now(), "input": code })
+    db.collection("log").doc(weekString).collection(auth.currentUser["displayName"]).doc(Date.now().toString() + " -- " + code.toString()).set({"time": firebase.firestore.Timestamp.now(), "input": code })
 
     storage.refFromURL('gs://theeventonline-4809b.appspot.com/password').child(code).child('image.jpg').getDownloadURL().then(
 
     url => {document.querySelector("#image_response").src = url ;
     document.querySelector("#pwdError").style["display"] = "none";}
-    ).catch(e=>  {document.querySelector("#pwdError").innerText = "Incorrect Password: " + pwdForm['pwd-input'].value.toString() ; document.querySelector("#pwdError").style.removeProperty("display")})
+    ).catch(e=>  {document.querySelector("#pwdError").innerText = "Incorrect Password: " + rawCode ; document.querySelector("#pwdError").style.removeProperty("display")})
     
-
+    pwdForm['pwd-input'].value = ""
 })
 
