@@ -33,9 +33,12 @@ auth.onAuthStateChanged(async function (user) {
         document.querySelector("#topMessage").parentElement.style.removeProperty("display")
         }
 
-        if(weekString == "week3" || weekString == "week5"){
+        //change week7 to week8 when live
+        if(weekString == "week3" || weekString == "week5" || weekString == "week8"){
             document.querySelector("#UploadPhoto label").innerText = "Select Photo 1"
             document.querySelector("#UploadPhoto2").style.removeProperty("display")
+            document.querySelector("#UploadPhoto3").style.removeProperty("display")
+            document.querySelector("#UploadPhoto4").style.removeProperty("display")
             
         }
 

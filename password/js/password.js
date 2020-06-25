@@ -42,6 +42,20 @@ loginForm.addEventListener('submit', (e) => {
 
 })
 
+//"Password" or "Command"
+var input_type = "Password"
+
+function initHack(){
+    input_type = "Command"
+    console.log("Init hack.")
+    let bdy = document.querySelector("body")
+    bdy.style.color = "white";
+    bdy.style.background = "black";
+    pwdForm['pwd-input'].maxLength = 8
+    pwdForm['pwd-input'].placeholder = "########"
+    document.querySelector("#logo").style.filter = "invert(1) brightness(120%)";
+    pwdForm.style.color = "black";
+}
 
 // Submit password
 const pwdForm = document.querySelector('#pwd-form')
@@ -50,13 +64,17 @@ pwdForm.addEventListener('submit', (e) => {
     const code = pwdForm['pwd-input'].value.toUpperCase();
     const rawCode = pwdForm['pwd-input'].value.toString();
     console.log("Entering...", code)
+
+    if(code == "LAUNCH"){initHack();}
+
+
     db.collection("log").doc(weekString).collection(auth.currentUser["displayName"]).doc(Date.now().toString() + " -- " + code.toString()).set({"time": firebase.firestore.Timestamp.now(), "input": code })
 
     storage.refFromURL('gs://theeventonline-4809b.appspot.com/password').child(code).child('image.jpg').getDownloadURL().then(
 
     url => {document.querySelector("#image_response").src = url ;
     document.querySelector("#pwdError").style["display"] = "none";}
-    ).catch(e=>  {document.querySelector("#pwdError").innerText = "Incorrect Password: " + rawCode ; document.querySelector("#pwdError").style.removeProperty("display")})
+    ).catch(e=>  {document.querySelector("#pwdError").innerText = "Incorrect " + input_type + ": " + rawCode ; document.querySelector("#pwdError").style.removeProperty("display")})
     
     pwdForm['pwd-input'].value = ""
 })

@@ -7,6 +7,12 @@ const photoSpan = document.querySelector('#UploadPhoto span');
 const photoUpload2 = document.querySelector('#UploadPhoto2 input');
 const photoSpan2 = document.querySelector('#UploadPhoto2 span');
 
+const photoUpload3 = document.querySelector('#UploadPhoto3 input');
+const photoSpan3 = document.querySelector('#UploadPhoto3 span');
+
+const photoUpload4 = document.querySelector('#UploadPhoto4 input');
+const photoSpan4 = document.querySelector('#UploadPhoto4 span');
+
 function initUpload(uploadEle, spanEle) {
 
     uploadEle.addEventListener('change', function () {
@@ -23,6 +29,8 @@ function initUpload(uploadEle, spanEle) {
 initUpload(answerUpload, answerSpan)
 initUpload(photoUpload, photoSpan)
 initUpload(photoUpload2, photoSpan2)
+initUpload(photoUpload3, photoSpan3)
+initUpload(photoUpload4, photoSpan4)
 
 
 function shortenFilename(fn) {
@@ -97,6 +105,9 @@ function onSubmit() {
     _submit(answerUpload, answerSpan)
     _submit(photoUpload, photoSpan)
     _submit(photoUpload2, photoSpan2)
+    _submit(photoUpload3, photoSpan3)
+    _submit(photoUpload4, photoSpan4)
+
 
 
 }
@@ -227,6 +238,11 @@ function onTimerExpire(){
     unlockBtn.style.display = "none";
     weekMessageDiv.children[0].innerText = "IT'S OVER!"
     weekMessageDiv.children[1].innerText = "You've done all that you can for this week. \n We hope that you had fun."
+
+    if(weekString == "week8"){
+    weekMessageDiv.children[0].innerText = "The Event Online is over!"
+    weekMessageDiv.children[1].innerText = "You've done all that you can. \n We hope that you've enjoyed it! \n\n Until the next global pandemic... \n\n Stay safe. \n Happy quizzing."
+    }
     
     weekMessageDiv.style.removeProperty("display");
 }
