@@ -48,6 +48,7 @@ var input_type = "Password"
 function initHack(){
     input_type = "Command"
     console.log("Init hack.")
+    document.querySelector("#req").innerText = "Command required."
     let bdy = document.querySelector("body")
     bdy.style.color = "white";
     bdy.style.background = "black";
